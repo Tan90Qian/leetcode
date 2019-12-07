@@ -6,7 +6,7 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "lib": ["dom", "es6", "es7"],
+    "lib": ["dom", "es6", "esnext"],
     "esModuleInterop": true,
     "moduleResolution": "node"
   },
