@@ -1,7 +1,5 @@
 export const maxWidthRamp = function(A: number[]) {
-  return Math.max(
-    ...A.map((value, idx, source) => compareOnce(value, idx, source))
-  );
+  return Math.max(...A.map(compareOnce));
 };
 
 export function compareOnce(target: number, idx: number, arr: number[]) {
