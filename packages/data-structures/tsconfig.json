@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "lib": ["dom", "es6", "esnext"],
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "./lib"
+  },
+  "include": ["modules/**/*"],
+  "exclude": ["**/*.spec.ts"]
+}
