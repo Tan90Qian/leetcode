@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./lib",
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
@@ -7,8 +8,7 @@
     "lib": ["dom", "es6", "esnext"],
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "declaration": true,
-    "declarationDir": "./lib"
+    "declaration": true
   },
   "include": ["modules/**/*"],
   "exclude": ["**/*.spec.ts"]
