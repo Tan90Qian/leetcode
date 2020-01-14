@@ -2,31 +2,13 @@ interface Items<T = any> {
   [count: number]: T;
 }
 
-export class Queue<T = any> {
-  private count: number;
-  private lowestCount: number;
-  private items: Items<T>;
+class BaseQueue<T = any> {
+  protected count: number;
+  protected lowestCount: number;
+  protected items: Items<T>;
 
   constructor() {
     this.clear();
-  }
-
-  enqueue(element: T) {
-    this.items[this.count] = element;
-    this.count++;
-  }
-
-  dequeue() {
-    if (this.isEmpty()) return undefined;
-    const result = this.items[this.lowestCount];
-    delete this.items[this.lowestCount];
-    this.lowestCount++;
-    return result;
-  }
-
-  peek() {
-    if (this.isEmpty()) return undefined;
-    return this.items[this.lowestCount];
   }
 
   isEmpty() {
@@ -51,4 +33,28 @@ export class Queue<T = any> {
     }
     return objString;
   }
+}
+
+export class Queue<T = any> extends BaseQueue<T> {
+  enqueue(element: T) {
+    this.items[this.count] = element;
+    this.count++;
+  }
+
+  dequeue() {
+    if (this.isEmpty()) return undefined;
+    const result = this.items[this.lowestCount];
+    delete this.items[this.lowestCount];
+    this.lowestCount++;
+    return result;
+  }
+
+  peek() {
+    if (this.isEmpty()) return undefined;
+    return this.items[this.lowestCount];
+  }
+}
+
+export class Deque<T =any> extends BaseQueue<T> {
+  
 }
