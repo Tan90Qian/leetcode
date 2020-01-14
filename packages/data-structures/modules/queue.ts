@@ -2,7 +2,7 @@ interface Items<T = any> {
   [count: number]: T;
 }
 
-class BaseQueue<T = any> {
+export class BaseQueue<T = any> {
   protected count: number;
   protected lowestCount: number;
   protected items: Items<T>;

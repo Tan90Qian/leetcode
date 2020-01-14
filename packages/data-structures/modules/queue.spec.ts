@@ -1,4 +1,18 @@
-import { Queue } from "./queue";
+import { BaseQueue, Queue } from "./queue";
+
+describe("test Base Queue", () => {
+  let baseQueue: BaseQueue;
+
+  beforeEach(() => {
+    baseQueue = new BaseQueue();
+  });
+
+  it("init test", () => {
+    expect(baseQueue.isEmpty()).toBe(true);
+    expect(baseQueue.size()).toBe(0);
+    expect(baseQueue.toString()).toBe('');
+  });
+})
 
 describe("test Queue", () => {
   let queue: Queue;
@@ -8,10 +22,7 @@ describe("test Queue", () => {
   });
 
   it("init test", () => {
-    expect(queue.isEmpty()).toBe(true);
     expect(queue.peek()).toBe(undefined);
-    expect(queue.size()).toBe(0);
-    expect(queue.toString()).toBe('');
     expect(queue.dequeue()).toBe(undefined);
   });
 
