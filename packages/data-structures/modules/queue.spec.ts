@@ -11,6 +11,8 @@ describe("test Queue", () => {
     expect(queue.isEmpty()).toBe(true);
     expect(queue.peek()).toBe(undefined);
     expect(queue.size()).toBe(0);
+    expect(queue.toString()).toBe('');
+    expect(queue.dequeue()).toBe(undefined);
   });
 
   it("test enqueue api", () => {
@@ -40,7 +42,6 @@ describe("test Queue", () => {
   });
 
   it("test toString api", () => {
-    expect(queue.toString()).toBe('');
     queue.enqueue(5);
     expect(queue.toString()).toBe('5');
     queue.enqueue(8);
