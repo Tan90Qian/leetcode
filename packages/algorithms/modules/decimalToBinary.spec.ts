@@ -19,4 +19,8 @@ describe("test decimalToBinary", () => {
   it("test base bigger than 36", () => {
     expect(decimalToBinary(10, 37)).toBe("");
   });
+
+  it("test base bigger than 16", () => {
+    expect(decimalToBinary(233, 16)).toBe("E9");
+  });
 });

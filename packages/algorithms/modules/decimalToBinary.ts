@@ -1,5 +1,7 @@
 import { Stack } from "../../data-structures";
 
+const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
 export function decimalToBinary(decNumber: number, base = 2) {
   const remStack = new Stack();
   let number = decNumber;
@@ -16,7 +18,7 @@ export function decimalToBinary(decNumber: number, base = 2) {
     number = Math.floor(number / base);
   }
   while (!remStack.isEmpty()) {
-    binaryString += remStack.pop().toString();
+    binaryString += digits[remStack.pop()];
   }
   return binaryString;
 }
