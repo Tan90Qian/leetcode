@@ -60,7 +60,6 @@ describe("test Queue", () => {
   });
 });
 
-
 describe("test Deque", () => {
   let deque: Deque;
 
@@ -68,5 +67,52 @@ describe("test Deque", () => {
     deque = new Deque();
   });
 
-  it("")
-})
+  it("init test", () => {
+    expect(deque.isEmpty()).toBe(true);
+  });
+
+  it("test addBack api", () => {
+    deque.addFront(5);
+    expect(deque.size()).toBe(1);
+    deque.addFront(8);
+    expect(deque.size()).toBe(2);
+  })
+
+  it("test addFront api", () => {
+    deque.addFront(5);
+    expect(deque.size()).toBe(1);
+    deque.addFront(8);
+    expect(deque.size()).toBe(2);
+  });
+
+  it("test peekFront and peekBack api", () => {
+    deque.addFront(5);
+    deque.addFront(8);
+    expect(deque.peekBack()).toBe(5);
+    expect(deque.peekFront()).toBe(8);
+  })
+
+  it("test removeBack api", () => {
+    deque.addBack(5);
+    deque.addBack(8);
+    let result = deque.removeBack();
+    expect(result).toBe(8);
+    expect(deque.size()).toBe(1);
+    deque.addFront(58);
+    result = deque.removeBack();
+    expect(result).toBe(5);
+    expect(deque.size()).toBe(1);
+  })
+
+  it("test removeFront api", () => {
+    deque.addBack(5);
+    deque.addBack(8);
+    let result = deque.removeFront();
+    expect(result).toBe(5);
+    expect(deque.size()).toBe(1);
+    deque.addFront(58);
+    result = deque.removeFront();
+    expect(result).toBe(58);
+    expect(deque.size()).toBe(1);
+  })
+});

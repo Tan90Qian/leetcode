@@ -57,26 +57,47 @@ export class Queue<T = any> extends BaseQueue<T> {
 
 export class Deque<T = any> extends BaseQueue<T> {
   addFront(element: T) {
-    if(this.isEmpty()) this.addBack(element);
-    else if(this.lowestCount>0){
+    if (this.isEmpty()) this.addBack(element);
+    else if (this.lowestCount > 0) {
       this.lowestCount--;
       this.items[this.lowestCount] = element;
-    }else {
-      for(let i =this.count;i>this.lowestCount;i--){
-        this.items[i] = this.items[i-1]
+    } else {
+      for (let i = this.count; i > 0; i--) {
+        this.items[i] = this.items[i - 1];
       }
       this.count++;
-      this.items[this.lowestCount]
+      this.items[this.lowestCount] = element;
     }
   }
 
-  addBack(element: T) {}
+  addBack(element: T) {
+    this.items[this.count] = element;
+    this.count++;
+  }
 
-  removeFront() {}
+  removeFront() {
+    if (this.isEmpty()) return undefined;
+    const result = this.items[this.lowestCount];
+    delete this.items[this.lowestCount];
+    this.lowestCount++;
+    return result;
+  }
 
-  removeBack() {}
+  removeBack() {
+    if (this.isEmpty()) return undefined;
+    this.count--;
+    const result = this.items[this.count];
+    delete this.items[this.count];
+    return result;
+  }
 
-  peekFront() {}
+  peekFront() {
+    if (this.isEmpty()) return undefined;
+    return this.items[this.lowestCount];
+  }
 
-  peekBack() {}
+  peekBack() {
+    if (this.isEmpty()) return undefined;
+    return this.items[this.count - 1];
+  }
 }
