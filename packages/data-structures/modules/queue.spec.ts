@@ -1,4 +1,4 @@
-import { BaseQueue, Queue } from "./queue";
+import { BaseQueue, Queue, Deque } from "./queue";
 
 describe("test Base Queue", () => {
   let baseQueue: BaseQueue;
@@ -10,9 +10,9 @@ describe("test Base Queue", () => {
   it("init test", () => {
     expect(baseQueue.isEmpty()).toBe(true);
     expect(baseQueue.size()).toBe(0);
-    expect(baseQueue.toString()).toBe('');
+    expect(baseQueue.toString()).toBe("");
   });
-})
+});
 
 describe("test Queue", () => {
   let queue: Queue;
@@ -54,8 +54,19 @@ describe("test Queue", () => {
 
   it("test toString api", () => {
     queue.enqueue(5);
-    expect(queue.toString()).toBe('5');
+    expect(queue.toString()).toBe("5");
     queue.enqueue(8);
-    expect(queue.toString()).toBe('5,8');
+    expect(queue.toString()).toBe("5,8");
   });
 });
+
+
+describe("test Deque", () => {
+  let deque: Deque;
+
+  beforeEach(() => {
+    deque = new Deque();
+  });
+
+  it("")
+})

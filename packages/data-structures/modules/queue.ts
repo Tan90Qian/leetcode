@@ -55,6 +55,28 @@ export class Queue<T = any> extends BaseQueue<T> {
   }
 }
 
-export class Deque<T =any> extends BaseQueue<T> {
-  
+export class Deque<T = any> extends BaseQueue<T> {
+  addFront(element: T) {
+    if(this.isEmpty()) this.addBack(element);
+    else if(this.lowestCount>0){
+      this.lowestCount--;
+      this.items[this.lowestCount] = element;
+    }else {
+      for(let i =this.count;i>this.lowestCount;i--){
+        this.items[i] = this.items[i-1]
+      }
+      this.count++;
+      this.items[this.lowestCount]
+    }
+  }
+
+  addBack(element: T) {}
+
+  removeFront() {}
+
+  removeBack() {}
+
+  peekFront() {}
+
+  peekBack() {}
 }
