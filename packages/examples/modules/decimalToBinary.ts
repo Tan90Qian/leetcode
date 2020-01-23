@@ -1,8 +1,16 @@
 import { Stack } from "../../data-structures";
 
-const digits = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-export function decimalToBinary(decNumber: number, base = 2) {
+/**
+ * 10进制数转n进制数
+ *
+ * @export
+ * @param {number} decNumber
+ * @param {number} [base=2]
+ * @returns {string}
+ */
+export function decimalToBinary(decNumber: number, base = 2): string {
   const remStack = new Stack();
   let number = decNumber;
   let rem;

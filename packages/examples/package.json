@@ -1,9 +1,9 @@
 {
-  "name": "algorithms",
+  "name": "examples",
   "version": "1.0.0",
   "description": "",
-  "main": "cjs/algorithms.js",
-  "module": "esm/algorithms.js",
+  "main": "cjs/examples.js",
+  "module": "esm/examples.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
