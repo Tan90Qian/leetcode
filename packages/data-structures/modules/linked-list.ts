@@ -27,31 +27,46 @@ export class LinkedList<T = any> {
     this.count++;
   }
 
-  insert(element: T, position: number) {}
+  insert(element: T, position: number) {
+    if (position < 0 || position > this.count) return false;
+    const node = new Node(element);
+    if (position === 0) {
+      node.next = this.head;
+      this.head = node;
+    } else {
+      const prev = this.getElementAt(position - 1);
+      node.next = prev.next;
+      prev.next = node;
+    }
+    this.count++;
+    return true;
+  }
 
-  getElementAt(index: number) {}
+  getElementAt(position: number): Node<T> {
+    if (position < 0 || position > this.count) return undefined;
+    let current = this.head;
+    for (let i = 0; i < position; i++) {
+      current = current.next;
+    }
+    return current;
+  }
 
   remove(element: T) {}
 
   indexOf(element: T) {}
 
   removeAt(position: number): T {
-    if (position >= 0 && position < this.count) {
-      let current = this.head;
-      if (position === 0) {
-        this.head = current.next;
-      } else {
-        let prev: Node<T>;
-        for (let i = 0; i < position; i++) {
-          prev = current;
-          current = current.next;
-        }
-        prev.next = current.next;
-      }
-      this.count--;
-      return current.element;
+    if (position < 0 || position >= this.count) return undefined;
+    let current = this.head;
+    if (position === 0) {
+      this.head = current.next;
+    } else {
+      const prev = this.getElementAt(position - 1);
+      current = prev.next;
+      prev.next = current.next;
     }
-    return undefined;
+    this.count--;
+    return current.element;
   }
 
   isEmpty() {
