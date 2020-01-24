@@ -69,6 +69,10 @@ describe("test Deque", () => {
 
   it("init test", () => {
     expect(deque.isEmpty()).toBe(true);
+    expect(deque.peekFront()).toBe(undefined);
+    expect(deque.peekBack()).toBe(undefined);
+    expect(deque.removeFront()).toBe(undefined);
+    expect(deque.removeBack()).toBe(undefined);
   });
 
   it("test addBack api", () => {
