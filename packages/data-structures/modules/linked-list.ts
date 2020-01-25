@@ -51,16 +51,25 @@ export class LinkedList<T = any> {
     return current;
   }
 
-  remove(element: T) {}
+  remove(element: T) {
+    const idx = this.indexOf(element);
+    return !!this.removeAt(idx);
+  }
 
-  indexOf(element: T) {}
+  indexOf(element: T) {
+    let current = this.head;
+    for (let i = 0; i < this.count && current != null; i++) {
+      if (this.equalsFn(current.element, element)) return i;
+      current = current.next;
+    }
+    return -1;
+  }
 
   removeAt(position: number): T {
     if (position < 0 || position >= this.count) return undefined;
     let current = this.head;
-    if (position === 0) {
-      this.head = current.next;
-    } else {
+    if (position === 0) this.head = current.next;
+    else {
       const prev = this.getElementAt(position - 1);
       current = prev.next;
       prev.next = current.next;
@@ -77,5 +86,18 @@ export class LinkedList<T = any> {
     return this.count;
   }
 
-  toString() {}
+  getHead() {
+    return this.head;
+  }
+
+  toString() {
+    if (this.head == null) return "";
+    let objString = `${this.head.element}`;
+    let current = this.head.next;
+    for (let i = 0; i < this.size() && current != null; i++) {
+      objString = `${objString},${current.element}`;
+      current = current.next;
+    }
+    return objString;
+  }
 }

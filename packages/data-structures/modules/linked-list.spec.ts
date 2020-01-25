@@ -1,5 +1,4 @@
 import { LinkedList } from "./linked-list";
-import { Node } from "./linked-list.model";
 
 describe("test LinkedList", () => {
   let linkedList: LinkedList;
@@ -12,8 +11,11 @@ describe("test LinkedList", () => {
   it("init test", () => {
     expect(linkedList.size()).toBe(0);
     expect(linkedList.isEmpty()).toBe(true);
+    expect(linkedList.getHead()).toBe(undefined);
+    expect(linkedList.toString()).toBe("");
     expect(linkedList.getElementAt(-1)).toBe(undefined);
     expect(linkedList.removeAt(-1)).toBe(undefined);
+    expect(linkedList.remove(elementList[0])).toBe(false);
   });
 
   it("test push api", () => {
@@ -53,5 +55,29 @@ describe("test LinkedList", () => {
     result = linkedList.insert(elementList[1], 1);
     expect(result).toBe(true);
     expect(linkedList.getElementAt(1).element).toBe(elementList[1]);
+  });
+
+  it("test indexOf api", () => {
+    linkedList.push(elementList[0]);
+    linkedList.push(elementList[1]);
+    expect(linkedList.indexOf(elementList[1])).toBe(1);
+    expect(linkedList.indexOf(elementList[2])).toBe(-1);
+  });
+
+  it("test remove api", () => {
+    linkedList.push(elementList[0]);
+    linkedList.push(elementList[1]);
+    linkedList.push(elementList[2]);
+    expect(linkedList.remove(elementList[2])).toBe(true);
+    expect(linkedList.remove(elementList[0])).toBe(true);
+  });
+
+  it("test toString api", () => {
+    linkedList.push(elementList[0]);
+    linkedList.push(elementList[1]);
+    linkedList.push(elementList[2]);
+    expect(linkedList.toString()).toBe(
+      `${elementList[0]},${elementList[1]},${elementList[2]}`
+    );
   });
 });
