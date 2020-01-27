@@ -1,9 +1,9 @@
 {
-  "name": "util",
+  "name": "utils",
   "version": "1.0.0",
   "description": "",
-  "main": "cjs/util.js",
-  "module": "esm/util.js",
+  "main": "cjs/utils.js",
+  "module": "esm/utils.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",

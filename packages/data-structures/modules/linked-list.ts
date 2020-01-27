@@ -1,4 +1,4 @@
-import { defaultEquals, EqualsFn } from "../../util";
+import { defaultEquals, EqualsFn } from "../../utils";
 import { Node, DoublyNode } from "./linked-list.model";
 
 export class LinkedList<T = any> {
