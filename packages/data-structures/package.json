@@ -1,5 +1,5 @@
 {
-  "name": "data-structures",
+  "name": "@leetcode/data-structures",
   "version": "1.0.0",
   "description": "",
   "main": "cjs/data-structures.js",
