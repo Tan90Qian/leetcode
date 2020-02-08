@@ -1,9 +1,9 @@
 {
-  "name": "@leetcode/data-structures",
+  "name": "@leetcode/utils",
   "version": "1.0.0",
   "description": "",
-  "main": "cjs/data-structures.js",
-  "module": "esm/data-structures.js",
+  "main": "cjs/utils.js",
+  "module": "esm/utils.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",

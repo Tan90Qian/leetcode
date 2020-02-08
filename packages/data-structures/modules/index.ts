@@ -1,3 +1,3 @@
-export const a = 1;
-
-export { b } from "./b";
+export * from "./stack";
+export { Queue, Deque } from "./queue";
+export * from './linked-list';

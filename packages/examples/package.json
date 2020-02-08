@@ -1,9 +1,9 @@
 {
-  "name": "@leetcode/data-structures",
+  "name": "examples",
   "version": "1.0.0",
   "description": "",
-  "main": "cjs/data-structures.js",
-  "module": "esm/data-structures.js",
+  "main": "cjs/examples.js",
+  "module": "esm/examples.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
