@@ -1,4 +1,4 @@
-import { defaultEquals, EqualsFn } from "@leetcode/utils";
+import { defaultEquals, EqualsFn } from "utils";
 import { Node, DoublyNode } from "./linked-list.model";
 
 export class LinkedList<T = any> {

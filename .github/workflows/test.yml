@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup
+      run: |
+        yarn
+        npx lerna bootstrap
+    - name: build
+      run: npx lerna run build
+    - name: test
+      run: npx lerna run test

@@ -1,4 +1,4 @@
-import { Stack } from "@leetcode/data-structures";
+import { Stack } from "data-structures";
 
 const digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
